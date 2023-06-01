@@ -1,5 +1,5 @@
 import { useState } from "react";
-import InfiniteScroll from "./InfiniteScroll";
+import InfiniteScroll from "../common/InfiniteScroll";
 import axios from "axios";
 
 function Listing() {

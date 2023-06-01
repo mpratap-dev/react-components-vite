@@ -1,10 +1,7 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
-import Listing from "./components/Listing";
-import {
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query'
+import Listing from "./pages/Listing";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
   const queryClient = new QueryClient();
@@ -12,7 +9,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-        <Listing/>
+        <Link to="column-view">Column View</Link>
+        <Listing />
       </div>
     </QueryClientProvider>
   );
