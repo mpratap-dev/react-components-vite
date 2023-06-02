@@ -21,6 +21,12 @@ export type ColumnViewData = { [key: number]: ColumnViewDataItem[] };
 
 export type ColumnViewProps = {
   onClick: ({ level, id, row }: ClickEvent) => void;
-  data: ColumnViewData;
+  itemKey?: string;
   render: ({ row, isActive }: Render) => ReactElement;
 };
+
+
+export type Insert = {
+  level: number;
+  data: ColumnViewDataItem[];
+}

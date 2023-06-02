@@ -5,7 +5,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import ColumnView from './pages/ColumnView';
+import ColumnView from './pages/Columns';
 
 const router = createBrowserRouter([
   {
