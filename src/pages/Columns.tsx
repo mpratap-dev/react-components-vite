@@ -7,8 +7,8 @@ const ColumnViewPage = () => {
   const handleItemClick = ({ row, level }: ClickEvent) => {
     const { id } = row;
     const data = dummyColumnData[level];
-    const matchingChildren = Array.isArray(data) ? data.filter(({ parent_category_id }: any) => parent_category_id === id) : []; 
-    matchingChildren.length && setColumnData({ level, data: matchingChildren });
+    const matchingChildren = Array.isArray(data) ? data.filter(({ parent_category_id }: any) => parent_category_id === id) : [];     
+    setColumnData({ level, data: matchingChildren });
   };
 
   const renderItem = ({ row, isActive }: Render) => {
