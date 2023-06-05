@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ColumnViewProps, ColumnViewData, Insert, ColumnViewDataItem } from "./ColumnView.type";
+import { ColumnViewProps, Insert, ColumnViewDataItem } from "./ColumnView.type";
 
 const useColumnView = ({ onClick, render, itemKey = 'id' }: ColumnViewProps) => {
   const [activeItems, setActiveItem] = useState(new Map());
@@ -43,7 +43,7 @@ const useColumnView = ({ onClick, render, itemKey = 'id' }: ColumnViewProps) => 
     return activeItemsData;
   }
 
-  useEffect(() => {
+  const updateColumnData = () => { // onChange of active items
     const greatestActiveLevel = activeItems.size ? Math.max(...[...activeItems.keys()]) : 0;
 
     Array.from(columnData.keys()).forEach((key) => {
@@ -55,6 +55,10 @@ const useColumnView = ({ onClick, render, itemKey = 'id' }: ColumnViewProps) => 
         });
       }
     });
+  }
+
+  useEffect(() => {
+    updateColumnData();
   }, [activeItems, columnData]);
   
   return {
